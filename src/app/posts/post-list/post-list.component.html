@@ -1,0 +1,14 @@
+<main>
+  <!-- a voir si on laisse la possibilité d'etendre plusieurs panneaux à la fois -->
+  <!-- si le tableau des posts est vide, alors pas la peine d'afficher l'accordeon -->
+  <mat-accordion multi ='true' *ngIf = 'posts.length > 0'>
+    <!-- let post of posts et non let post in posts -->
+    <mat-expansion-panel *ngFor = 'let post of posts'>
+      <mat-expansion-panel-header>
+        {{post.title}}
+      </mat-expansion-panel-header>
+      <p>{{post.content}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class = "info-text mat-body-1" *ngIf = 'posts.length <= 0'>No Post added yet !!!</p>
+</main>

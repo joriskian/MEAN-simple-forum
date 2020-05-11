@@ -1,0 +1,8 @@
+<app-header></app-header>
+<main>
+  <!-- on ecoute l'evenement -->
+  <!-- $event en parametre pour avoir acces aux data qu'on emet ( defaut dom event) -->
+  <app-post-create (postCreated) = "onPostAdded($event)"></app-post-create>
+  <!-- et on le recupere -->
+  <app-post-list [posts] = "storedPosts"></app-post-list>
+</main>
